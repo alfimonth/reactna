@@ -1,6 +1,8 @@
 export type RootStackParamList = {
   Splash: undefined;
   Main: undefined;
+  Rooms: undefined;
+  Actives: undefined;
 };
 
 export type MainStackParamList = {

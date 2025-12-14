@@ -43,7 +43,7 @@ const NavigationBar = () => {
     return nested.name;
   });
 
-  console.log(currentRoute);
+  const routeName = currentRoute === 'Main' ? 'Home' : currentRoute;
 
   return (
     <View
@@ -55,19 +55,21 @@ const NavigationBar = () => {
           text="Home"
           icon={<Home />}
           iconActive={<HomeFill />}
-          isActive={currentRoute === 'Home'}
+          isActive={routeName === 'Home'}
           onPress={() => navigation.navigate('Main', { screen: 'Home' })}
         />
         <NavButton
           text="Smart"
           icon={<Net />}
           iconActive={<NetFill />}
+          isActive={currentRoute === 'Smart'}
           onPress={() => navigation.navigate('Main', { screen: 'Smart' })}
         />
         <NavButton
           text="Usage"
           icon={<Pie />}
           iconActive={<PieFill />}
+          isActive={currentRoute === 'Usage'}
           onPress={() => navigation.navigate('Main', { screen: 'Usage' })}
         />
         <NavButton
@@ -89,7 +91,7 @@ const NavButton = ({
   onPress,
   isActive = false,
 }: NavButtonProps) => {
-  const flexValue = useSharedValue(isActive ? 2 : 1);
+  const flexValue = useSharedValue(1); // selalu mulai dari 1
 
   useEffect(() => {
     flexValue.value = withTiming(isActive ? 2 : 1, { duration: 300 });
@@ -100,7 +102,7 @@ const NavButton = ({
   }));
 
   return (
-    <Animated.View style={[animatedStyle]}>
+    <Animated.View style={animatedStyle}>
       <TouchableOpacity
         onPress={onPress}
         className="h-14 justify-center items-center bg-white rounded-lg flex-row gap-2 px-4"

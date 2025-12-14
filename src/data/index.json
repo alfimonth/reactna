@@ -1,0 +1,121 @@
+{
+  "home": {
+    "details": [
+      { "title": "Humidity", "value": "97", "unit": "%", "icon": "humidity" },
+      {
+        "title": "Visibility",
+        "value": "7",
+        "unit": "km",
+        "icon": "visibility"
+      },
+      { "title": "NE Wind", "value": "3", "unit": "km/h", "icon": "wind" }
+    ],
+    "rooms": [
+      { "name": "Living Room", "temperatur": 19, "totalDevices": 5 },
+      { "name": "Bedroom", "temperatur": 12, "totalDevices": 8 },
+      { "name": "Kithchen", "temperatur": 19, "totalDevices": 5 },
+      { "name": "Toilet", "temperatur": 19, "totalDevices": 2 },
+      { "name": "Living Room", "temperatur": 15, "totalDevices": 3 },
+      { "name": "Bedroom 2", "temperatur": 19, "totalDevices": 4 }
+    ],
+    "actives": [
+      {
+        "name": "AC",
+        "room": "Living room",
+        "details": { "title": "Temprature", "type": "temp", "value": 19 }
+      },
+      {
+        "name": "Lamp",
+        "room": "Dining room",
+        "details": { "title": "Colour", "type": "text", "value": "White" }
+      },
+      {
+        "name": "Lamp",
+        "room": "Bedroom",
+        "details": { "title": "Colour", "type": "text", "value": "Yellow" }
+      },
+      {
+        "name": "AC",
+        "room": "Living room",
+        "details": { "title": "Temprature", "type": "temp", "value": 19 }
+      },
+      {
+        "name": "TV",
+        "room": "Bedroom",
+        "details": { "title": "Channel", "type": "text", "value": "TVN" }
+      },
+      {
+        "name": "AC",
+        "room": "Bedroom",
+        "details": { "title": "Temprature", "type": "temp", "value": 12 }
+      }
+    ]
+  },
+  "smarts": [
+    {
+      "name": "Smart Lamp",
+      "room": "Dining Room",
+      "active": {
+        "sun": [{ "start": "18:00", "to": "23:00" }],
+        "mon": [{ "start": "18:30", "to": "23:00" }],
+        "tue": [],
+        "wed": [],
+        "thu": [],
+        "fri": [],
+        "sat": [{ "start": "19:00", "to": "23:30" }]
+      },
+      "isActive": true
+    },
+    {
+      "name": "Air Purifier",
+      "room": "Bedroom",
+      "active": {
+        "sun": [],
+        "mon": [{ "start": "07:00", "to": "09:00" }],
+        "tue": [{ "start": "07:00", "to": "09:00" }],
+        "wed": [{ "start": "07:00", "to": "09:00" }],
+        "thu": [],
+        "fri": [{ "start": "20:00", "to": "23:00" }],
+        "sat": []
+      },
+      "isActive": false
+    },
+    {
+      "name": "Smart Curtain",
+      "room": "Living Room",
+      "active": {
+        "sun": [{ "start": "06:00", "to": "06:10" }],
+        "mon": [{ "start": "06:00", "to": "06:10" }],
+        "tue": [{ "start": "06:00", "to": "06:10" }],
+        "wed": [{ "start": "06:00", "to": "06:10" }],
+        "thu": [{ "start": "06:00", "to": "06:10" }],
+        "fri": [{ "start": "06:00", "to": "06:10" }],
+        "sat": [{ "start": "06:00", "to": "06:10" }]
+      },
+      "isActive": true
+    },
+    {
+      "name": "Water Heater",
+      "room": "Bathroom",
+      "active": {
+        "sun": [],
+        "mon": [{ "start": "05:30", "to": "06:30" }],
+        "tue": [{ "start": "05:30", "to": "06:30" }],
+        "wed": [],
+        "thu": [],
+        "fri": [{ "start": "05:30", "to": "06:30" }],
+        "sat": [{ "start": "06:00", "to": "07:00" }]
+      },
+      "isActive": true
+    }
+  ],
+  "profile": {
+    "name": "John Doe",
+    "age": 32,
+    "location": "Indonesia"
+  },
+  "settings": {
+    "theme": "dark",
+    "language": "ID"
+  }
+}
