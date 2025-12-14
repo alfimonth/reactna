@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .text-heading-1\/regular {
+    @apply text-heading-1 font-poppins-regular tracking-wider;
+  }
+
+  .text-heading-1\/semibold {
+    @apply text-heading-1 font-poppins-semibold tracking-wider;
+  }
+
+  .text-heading-2\/semibold {
+    @apply text-heading-2 font-poppins-semibold tracking-wider;
+  }
+
+  .text-body-1\/semibold {
+    @apply text-body-1 font-poppins-semibold tracking-wider;
+  }
+
+  .text-body-2\/regular {
+    @apply text-body-2 font-poppins-regular tracking-wider;
+  }
+
+  .text-body-2\/semibold {
+    @apply text-body-2 font-poppins-semibold tracking-wider;
+  }
+
+  .text-body-3\/regular {
+    @apply text-body-3 font-poppins-regular tracking-wider;
+  }
+  
+  .text-body-3\/semibold {
+    @apply text-body-3 font-poppins-semibold tracking-wider;
+  }
+
+  .text-caption-1\/regular {
+    @apply text-caption-1 font-poppins-regular tracking-wider;
+  }
+
+  .text-caption-1\/semibold {
+    @apply text-caption-1 font-poppins-semibold tracking-wider;
+  }
+}
