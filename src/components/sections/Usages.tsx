@@ -4,6 +4,7 @@ import Placeholder from '../Placeholder';
 import { UsageProps, UsagesProps } from '@/types/usage';
 import { memo } from 'react';
 import Divider from '../ui/Divider';
+import icons from '@/data/icon';
 
 const Usages = memo(({ onSeeAll, usages }: UsagesProps) => (
   <View className="gap-2">
@@ -26,18 +27,29 @@ const UsageCard = memo(
         <Text className="text-body-3/semibold">{name}</Text>
         <Text className="text-caption-1/regular">Kitchen - Bedroom</Text>
         <View className="flex-row gap-2">
-          <Text className="text-caption-1/regular">{units} Unit</Text>
-          <Divider/>
-          <Text className="text-caption-1/regular">{usageTime} Jam</Text>
+          <Text className="text-caption-1/regular text-gray">{units} Unit</Text>
+          <Divider color='bg-gray' />
+          <Text className="text-caption-1/regular text-gray">{usageTime} Jam</Text>
         </View>
       </View>
-      <View>
-        <View className="flex-row">
-          <Text>{usage}</Text>
-          <Text>Kw/h</Text>
+      <View className="items-end gap-[2px]">
+        <View className="flex-row gap-1">
+          <Text className="text-body-3/semibold text-main-2">{usage}</Text>
+          <Text className="text-body-3/regular text-main-2">Kw/h</Text>
         </View>
-        <View>
-          <Text>{percentage}</Text>
+        <View className="flex-row gap-1 items-center">
+          {percentage >= 0 ? (
+            <icons.up width={14} height={14} />
+          ) : (
+            <icons.down width={14} height={14} fill="#9A7265" />
+          )}
+          <Text
+            className={`text-caption-1/regular ${
+              percentage >= 0 ? 'text-main-3' : 'text-border'
+            } `}
+          >
+            {percentage}%
+          </Text>
         </View>
       </View>
     </View>

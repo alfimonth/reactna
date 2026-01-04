@@ -1,5 +1,7 @@
 import { View } from 'react-native';
 
-const Divider = () => <View className="h-full w-[.3px] bg-netral" />;
+const Divider = ({ color }: { color?: string }) => (
+  <View className={`h-full w-[.3px] ${color ? color : 'bg-netral'}`} />
+);
 
 export default Divider;

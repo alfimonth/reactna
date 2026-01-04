@@ -16,6 +16,8 @@ import Edit from '@/assets/icons/edit.svg';
 import Search from '@/assets/icons/search.svg';
 import Back from '@/assets/icons/back.svg';
 import Notif from '@/assets/icons/notifcations.svg';
+import Down from '@/assets/icons/down.svg';
+import Up from '@/assets/icons/up.svg';
 
 type IconComponent = ComponentType<SvgProps>;
 
@@ -33,7 +35,9 @@ const icons: Record<string, IconComponent> = {
   edit: Edit,
   search: Search,
   back: Back,
-  notif: Notif
+  notif: Notif,
+  down: Down,
+  up: Up,
 };
 
 export default icons;

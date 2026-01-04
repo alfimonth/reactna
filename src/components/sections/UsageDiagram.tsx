@@ -5,11 +5,13 @@ import { View, Text } from 'react-native';
 const UsageDiagram = () => {
   return (
     <View>
-      <View>
-        <View className="flex-row justify-between">
-          <Text className="text-surface-2">Usage this Week</Text>
-          <View className="flex-row gap-1">
-            <Text className="text-surface-2">2500</Text>
+      <View className="mb-3">
+        <View className="flex-row justify-between items-baseline">
+          <Text className="text-surface-2 text-body-3/semibold">
+            Usage this Week
+          </Text>
+          <View className="flex-row gap-1 items-baseline">
+            <Text className="text-surface-2 text-body-2/semibold">2500</Text>
             <Text className="text-surface-2">watt</Text>
           </View>
         </View>
@@ -33,20 +35,20 @@ const DiagramBody = ({
   const maxDataValue = Math.max(...rows);
   const maxValue = roundUpToNiceNumber(maxDataValue);
   const step = (maxValue - min) / interval;
-  
+
   return (
     <>
       <Text className="text-surface-2">{label}</Text>
       <View className="flex-row gap-3">
         <View className="flex-col-reverse gap-3 items-end">
           {Array.from({ length: interval + 1 }).map((_, i) => (
-            <Text key={i} className="text-surface-2">
+            <Text key={i} className="text-surface-2 text-caption-2/regular">
               {min + step * i}
             </Text>
           ))}
         </View>
         <View className="flex-1 justify-between py-3">
-          {rows.map((_, i) => (
+          {Array.from({ length: interval + 1 }).map((_, i) => (
             <View key={i} className="bg-surface-2 h-[1px]" />
           ))}
         </View>
@@ -57,9 +59,9 @@ const DiagramBody = ({
 
 const DiagramFooter = ({ label, cols }: DiagramFooterProps) => (
   <View className="flex-row justify-between py-2 pl-1 pr-2">
-    <Text className="text-surface-2">{label}</Text>
-    {cols.map((col, _) => (
-      <Text key={_} className="text-surface-2">
+    <Text className="text-surface-2 text-caption-1/semibold">{label}</Text>
+    {cols.map((col, i) => (
+      <Text key={i} className="text-surface-2">
         {col}
       </Text>
     ))}
