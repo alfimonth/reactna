@@ -8,9 +8,6 @@ import { BodyWrapper, HeroWrapper } from '@/components/layouts/wrapper';
 import StatusBar from '@/components/ui/StatusBar';
 import { useNavigation } from '@react-navigation/native';
 import Rooms from '@/components/sections/Rooms';
-
-// svg
-import Notif from '@/assets/icons/notifcations.svg';
 import Actives from '@/components/sections/Actives';
 
 const HomeScreen = () => {
@@ -38,7 +35,7 @@ const HomeScreen = () => {
               }}
               className="bg-white rounded-full p-2"
             >
-              <Notif />
+              <icons.notif />
             </TouchableOpacity>
           </View>
 

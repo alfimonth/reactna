@@ -1,9 +1,11 @@
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import React from 'react';
 import StatusBar from '@/components/ui/StatusBar';
-import { HeroWrapper } from '@/components/layouts/wrapper';
+import { BodyWrapper, HeroWrapper } from '@/components/layouts/wrapper';
 import icons from '@/data/icon';
 import UsageDiagram from '@/components/sections/UsageDiagram';
+import Usages from '@/components/sections/Usages';
+import DATA from '@/data/index.json';
 
 const UsageScreen = () => {
   return (
@@ -26,16 +28,9 @@ const UsageScreen = () => {
           {/*Stats*/}
           <UsageDiagram />
         </HeroWrapper>
-        {/* <BodyWrapper>
-          <Rooms
-            rooms={data.rooms.slice(0, 2)}
-            onSeeAll={() => navigation.navigate('Rooms')}
-          />
-          <Actives
-            actives={data.actives.slice(0, 2)}
-            onSeeAll={() => navigation.navigate('Actives')}
-          />
-        </BodyWrapper> */}
+        <BodyWrapper>
+          <Usages onSeeAll={() => {}} usages={DATA.usages} />
+        </BodyWrapper>
       </ScrollView>
     </View>
   );

@@ -114,6 +114,38 @@
     "age": 32,
     "location": "Indonesia"
   },
+  "usages": [
+    {
+      "name": "Lamp",
+      "rooms": [
+        {
+          "name": "Kithchen"
+        },
+        {
+          "name": "Bedroom"
+        }
+      ],
+      "units": 8,
+      "usage": 1000,
+      "usageTime": 1200000,
+      "percentage": -12
+    },
+    {
+      "name": "Air Conditioner",
+      "rooms": [
+        {
+          "name": "Kithchen"
+        },
+        {
+          "name": "Bedroom"
+        }
+      ],
+      "units": 8,
+      "usage": 1000,
+      "usageTime": 1000000,
+      "percentage": -12
+    }
+  ],
   "settings": {
     "theme": "dark",
     "language": "ID"

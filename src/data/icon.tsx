@@ -15,6 +15,7 @@ import Delete from '@/assets/icons/delete.svg';
 import Edit from '@/assets/icons/edit.svg';
 import Search from '@/assets/icons/search.svg';
 import Back from '@/assets/icons/back.svg';
+import Notif from '@/assets/icons/notifcations.svg';
 
 type IconComponent = ComponentType<SvgProps>;
 
@@ -32,6 +33,7 @@ const icons: Record<string, IconComponent> = {
   edit: Edit,
   search: Search,
   back: Back,
+  notif: Notif
 };
 
 export default icons;
