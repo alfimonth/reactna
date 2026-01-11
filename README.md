@@ -1,4 +1,3 @@
-
 # 🏠 Smart Home Dashboard
 
 Smart Home Dashboard adalah aplikasi manajemen **perangkat rumah pintar** yang memungkinkan pengguna memantau penggunaan energi, mengelola ruangan, dan mengontrol perangkat aktif secara real-time melalui satu antarmuka yang sederhana dan modern.
@@ -97,7 +96,7 @@ MIT License © 2026
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to open an issue or submit a pull request.
+- afimonth
 
 ---
 
