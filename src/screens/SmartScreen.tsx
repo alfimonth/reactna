@@ -7,6 +7,7 @@ import HeaderSection from '@/components/ui/HeaderSection';
 import Placeholder from '@/components/Placeholder';
 import Divider from '@/components/ui/Divider';
 import DATA from '@/data/index.json';
+import ToggleOnOff from '@/components/ui/ToggleOnOff';
 
 type SmartCardProps = {
   name: string;
@@ -77,7 +78,7 @@ const SmartCard = ({ name, room, isActive }: SmartCardProps) => (
           </View>
         </View>
       </View>
-      {isActive ? <icons.on /> : <icons.off />}
+      <ToggleOnOff/>
     </View>
 
     {/* Body */}
