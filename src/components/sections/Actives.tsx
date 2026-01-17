@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { Text, View } from 'react-native';
 import HeaderSection from '../ui/HeaderSection';
 import Placeholder from '../Placeholder';
-import icons from '@/data/icon';
+import ToggleOnOff from '../ui/ToggleOnOff';
 
 type ActivesProps = {
   actives: ActiveCardProps[];
@@ -54,7 +54,7 @@ const ActiveCard = memo(({ name, room, details }: ActiveCardProps) => (
         <Text className="text-white text-body-1/semibold">{name}</Text>
         <Text className="text-caption-1/regular text-white">{room}</Text>
       </View>
-      <icons.off />
+      <ToggleOnOff/>
     </View>
   </View>
 ));
