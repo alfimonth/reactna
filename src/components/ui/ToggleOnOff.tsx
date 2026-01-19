@@ -1,10 +1,24 @@
 import { useEffect, useRef, useState } from 'react';
 import { Animated, Pressable, View } from 'react-native';
+import icons from '@/data/icon';
 
-const ToggleOnOff = () => {
-  const [isOn, setIsOn] = useState(false);
+type ToggleOnOffProps = {
+  value?: boolean;
+  defaultValue?: boolean;
+  onChange?: (nextValue: boolean) => void;
+};
+
+const ToggleOnOff = ({ value, defaultValue = false, onChange }: ToggleOnOffProps) => {
+  const isControlled = value !== undefined;
+  const [isOn, setIsOn] = useState(defaultValue);
   const toggleAnim = useRef(new Animated.Value(0)).current;
   const slideDistance = -23;
+
+  useEffect(() => {
+    if (isControlled) {
+      setIsOn(value);
+    }
+  }, [isControlled, value]);
 
   useEffect(() => {
     Animated.timing(toggleAnim, {
@@ -23,22 +37,26 @@ const ToggleOnOff = () => {
     inputRange: [0, 1],
     outputRange: ['0deg', '-180deg'],
   });
-  const textTranslateX = toggleAnim.interpolate({
+  const labelTranslateX = toggleAnim.interpolate({
     inputRange: [0, 1],
     outputRange: [0, 20],
   });
+  const LabelIcon = isOn ? icons.on : icons.off;
 
   return (
     <Pressable
-      onPress={() => setIsOn((prev) => !prev)}
+      onPress={() => {
+        const nextValue = !isOn;
+        if (!isControlled) {
+          setIsOn(nextValue);
+        }
+        onChange?.(nextValue);
+      }}
       className={`bg-white rounded-full gap-[2px] ${isOn ? 'border-red-500' : 'border-main-3'} border-[3px] flex-row items-center py-[.5] pr-[.9] pl-[2px]`}
     >
-      <Animated.Text
-        className={`font-bold ${isOn ? 'text-red-500' : 'text-main-3'}`}
-        style={{ transform: [{ translateX: textTranslateX }] }}
-      >
-        {isOn ? 'ON' : 'OFF'}
-      </Animated.Text>
+      <Animated.View style={{ transform: [{ translateX: labelTranslateX }] }}>
+        <LabelIcon width={34} height={16} />
+      </Animated.View>
       <Animated.View
         className={`bg-white rounded-full ${isOn ? 'border-red-500' : 'border-main-3'} border-[2.3px] p-[.9] relative`}
         style={{ transform: [{ translateX }, { rotate }] }}
